@@ -1,0 +1,17 @@
+<!-- formulário template driven de criação de jogador -->
+
+
+<h2>Criar Jogador</h2>
+<form #jogadorForm="ngForm" (ngSubmit)="criarJogador(jogadorForm)">
+  <label for="nome">Nome:</label>
+  <input type="text" id="nome" name="nome" ngModel required />
+
+  <label for="posicao">Posição:</label>
+  <input type="text" id="posicao" name="posicao" ngModel required />
+<br>
+<br>
+
+  <button type="submit">Criar Jogador</button>
+</form>
+
+<br>

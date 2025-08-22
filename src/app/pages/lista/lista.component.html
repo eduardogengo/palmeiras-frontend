@@ -1,0 +1,24 @@
+<a href="/">Voltar</a>
+
+<h1>Lista dos Jogadores</h1>
+
+<app-criar (jogadorCriado)="listarJogadores()"></app-criar>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Posição</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(jogador of jogadores; track jogador.id) {
+    <tr>
+      <td>{{ jogador.nome }}</td>
+      <td>{{ jogador.posicao }}</td>
+      <td><button (click)="excluirJogador(jogador.id)">Excluir</button></td>
+    </tr>
+    }
+  </tbody>
+</table>
