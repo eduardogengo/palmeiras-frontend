@@ -1,5 +1,16 @@
-<h1>Página do Verdão</h1>
+<div class="min-h-screen flex flex-col items-center justify-center bg-green-50 p-6">
+  <h1 class="text-4xl font-extrabold text-green-700 mb-4">
+    Página do Verdão
+  </h1>
 
-<p>Vamos ver a lista de jogadores?</p>
+  <p class="text-lg text-gray-700 mb-6">
+    Vamos ver a lista de jogadores?
+  </p>
 
-<a [routerLink]="'/lista'">Lista</a>
+  <a
+    [routerLink]="'/lista'"
+    class="px-6 py-3 rounded-2xl bg-green-600 text-white font-semibold shadow-md hover:bg-green-700 hover:shadow-lg transition-all"
+  >
+    Ver Lista
+  </a>
+</div>

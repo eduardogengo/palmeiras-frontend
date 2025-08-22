@@ -1,17 +1,36 @@
-<!-- formulário template driven de criação de jogador -->
+<div class="bg-white rounded-2xl shadow p-6 mb-8">
+  <h2 class="text-2xl font-bold text-green-700 mb-4">Criar Jogador</h2>
 
+  <form #jogadorForm="ngForm" (ngSubmit)="criarJogador(jogadorForm)" class="space-y-4">
+    <div class="flex flex-col">
+      <label for="nome" class="text-sm font-medium text-gray-700">Nome</label>
+      <input
+        type="text"
+        id="nome"
+        name="nome"
+        ngModel
+        required
+        class="mt-1 p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+      />
+    </div>
 
-<h2>Criar Jogador</h2>
-<form #jogadorForm="ngForm" (ngSubmit)="criarJogador(jogadorForm)">
-  <label for="nome">Nome:</label>
-  <input type="text" id="nome" name="nome" ngModel required />
+    <div class="flex flex-col">
+      <label for="posicao" class="text-sm font-medium text-gray-700">Posição</label>
+      <input
+        type="text"
+        id="posicao"
+        name="posicao"
+        ngModel
+        required
+        class="mt-1 p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+      />
+    </div>
 
-  <label for="posicao">Posição:</label>
-  <input type="text" id="posicao" name="posicao" ngModel required />
-<br>
-<br>
-
-  <button type="submit">Criar Jogador</button>
-</form>
-
-<br>
+    <button
+      type="submit"
+      class="w-full bg-green-600 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-green-700 transition-all"
+    >
+      Criar Jogador
+    </button>
+  </form>
+</div>
