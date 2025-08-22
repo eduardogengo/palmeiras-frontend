@@ -13,16 +13,16 @@ import { NgFor } from '@angular/common';
 })
 export class CriarComponent {
   // output event emmiter
-  @Output() jogadorCriado: EventEmitter<undefined> = new EventEmitter<undefined>();
-
+  @Output() jogadorCriado: EventEmitter<undefined> =
+    new EventEmitter<undefined>();
 
   constructor(private service: PrincipalService) {}
 
   criarJogador(form: NgForm) {
-
     this.service.criar(form.value).subscribe(() => {
       console.log('Jogador criado com sucesso!');
       this.jogadorCriado.emit(form.value); // Emit the created player
+      form.reset(); // Reset the form after submission
     });
   }
 }
