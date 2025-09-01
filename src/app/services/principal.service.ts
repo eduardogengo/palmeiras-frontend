@@ -8,6 +8,7 @@ import { Jogador } from '../interfaces/jogador.interface';
 export class PrincipalService {
 
   baseUrl = 'https://palmeiras-backend.vercel.app'
+  // baseUrl = 'localhost:3000'
 
   constructor(private http: HttpClient) { 
   }
@@ -16,11 +17,16 @@ export class PrincipalService {
     // return this.http.get('http://localhost:3000/jogadores');  
   }
 
+  getListaPosicao() {
+    return this.http.get(`${this.baseUrl}/posicao`);  
+    // return this.http.get('http://localhost:3000/jogadores');  
+  }
+
   criar(jogador: Jogador) {
     // transformando o jogador para o formato esperado pelo backend
     const jogadorData = {
       nome: jogador.nome,
-      posicao: jogador.posicao
+      idPosicao: jogador.idPosicao
     };
     console.log('Jogador enviado:', jogadorData);
     return this.http.post(`${this.baseUrl}/jogadores`, jogadorData);  

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PrincipalService } from '../../services/principal.service';
 import { CriarComponent } from '../criar/criar.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-lista',
@@ -12,6 +14,7 @@ import { CriarComponent } from '../criar/criar.component';
 export class ListaComponent implements OnInit {
 
   jogadores: any[] = [];
+  
 
   constructor(private principalService: PrincipalService) { }
 
@@ -25,6 +28,8 @@ export class ListaComponent implements OnInit {
       console.log(this.jogadores);
     });
   }
+
+
 
   excluirJogador(id: string) {
     this.principalService.excluir(id).subscribe(() => {
