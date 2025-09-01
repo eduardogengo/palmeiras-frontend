@@ -4,9 +4,3 @@ export interface Jogador {
   posicao?: string;
   idPosicao?: number;
 }
-
-export interface JogadorApiResponse {
-  id: string;
-  nome: string;
-  descricao: string;
-}

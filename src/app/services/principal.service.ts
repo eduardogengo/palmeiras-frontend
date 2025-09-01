@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Jogador, JogadorApiResponse } from '../interfaces/jogador.interface';
+import { Jogador } from '../interfaces/jogador.interface';
 import { map, Observable } from 'rxjs';
 
 @Injectable({
@@ -12,12 +12,12 @@ export class PrincipalService {
 
   constructor(private http: HttpClient) {}
   getLista(): Observable<Jogador[]> {
-    return this.http.get<JogadorApiResponse[]>(`${this.baseUrl}/jogadores`).pipe(
+    return this.http.get<Jogador[]>(`${this.baseUrl}/jogadores`).pipe(
       map((data) => {
         return data.map((item) => ({
           id: item.id,
           nome: item.nome,
-          posicao: item.descricao,
+          posicao: item.posicao,
         }));
       })
     );
