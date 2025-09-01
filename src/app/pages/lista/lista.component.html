@@ -31,7 +31,7 @@
           <td class="py-3 px-4">{{ jogador.nome }}</td>
           <td class="py-3 px-4">{{ jogador.posicao }}</td>
           <td class="py-3 px-4">
-            <button
+            <button *ngIf="jogador.id"
               (click)="excluirJogador(jogador.id)"
               class="bg-red-500 text-white px-3 py-1 rounded-lg shadow hover:bg-red-600 transition"
             >

@@ -1,5 +1,12 @@
 export interface Jogador {
   id?: string;
   nome: string;
-  idPosicao: number;
+  posicao?: string;
+  idPosicao?: number;
+}
+
+export interface JogadorApiResponse {
+  id: string;
+  nome: string;
+  descricao: string;
 }

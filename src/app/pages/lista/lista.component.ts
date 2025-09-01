@@ -3,17 +3,18 @@ import { PrincipalService } from '../../services/principal.service';
 import { CriarComponent } from '../criar/criar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { Jogador } from '../../interfaces/jogador.interface';
 
 @Component({
   selector: 'app-lista',
   standalone: true,
-  imports: [CriarComponent],
+  imports: [CriarComponent, CommonModule],
   templateUrl: './lista.component.html',
   styleUrl: './lista.component.scss'
 })
 export class ListaComponent implements OnInit {
 
-  jogadores: any[] = [];
+  jogadores: Jogador[] = [];
   
 
   constructor(private principalService: PrincipalService) { }
